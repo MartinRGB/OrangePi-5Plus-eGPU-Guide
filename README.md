@@ -54,8 +54,19 @@ index 72bd94b..ec5257b 100644
  }
 ```
 
+make and copy to bin
+
 ```
 make
+sudo cp rkdeveloptool /usr/local/bin/
+sudo ldconfig
+```
+
+test if installed
+
+```
+rkdeveloptool -v
+rkdeveloptool ver 1.32
 ```
 
 ### Connect OrangePi 5 Plus to PC
