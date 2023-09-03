@@ -4,7 +4,7 @@
 
 Related reddit topic [Upstream U-Boot support for OrangePi 5/5B/5+](https://www.reddit.com/r/OrangePI/comments/157l7hv/upstream_uboot_support_for_orangepi_55b5/)
 
-1. in PC Linux System,prepare these package
+1.in PC Linux System,prepare these package
 
 ```
 sudo apt install git bc bison flex libssl-dev make 
