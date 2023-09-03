@@ -64,7 +64,7 @@ image & guide via [orangepiwiki](http://www.orangepi.org/orangepiwiki/index.php/
 
 1.connect OrangePi 5 Plus to the Windows computer through the Type-C data cable.
    
-![](http://www.orangepi.org/orangepiwiki/index.php/File:Plus5-img52.png)
+![](http://www.orangepi.org/orangepiwiki/images/9/96/Plus5-img52.png)
 
 2.press and hold the MaskROM button
 
