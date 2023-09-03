@@ -88,6 +88,10 @@ image & guide via [orangepiwiki](http://www.orangepi.org/orangepiwiki/index.php/
 4.run `rkdeveloptool ld` to find device
 
 
+```
+sudo apt-get install gcc-arm-linux-gnueabihf
+```
+
 ## Reference 
 
 [Building mainline U-boot and Linux kernel for Orange Pi boards](https://uthings.uniud.it/building-mainline-u-boot-and-linux-kernel-for-orange-pi-boards)
