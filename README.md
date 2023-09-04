@@ -101,6 +101,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 ```
 
 >`Device Drivers`>`PCI Support`>`PCI Express Port Bus support`
+
 >`Graphics Support`>`ATI Radeon` & `AMD GPU` (Enable SI & CIK Support)
 
 ```
