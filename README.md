@@ -42,7 +42,9 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 <img src="https://raw.githubusercontent.com/MartinRGB/OrangePi-5Plus-eGPU-Guide/main/art/neofetch1.png" width="50%" height="50%">
 
-## Build Kernel
+## Build & Copy Kernel
+
+### Build Kernel
 
 ```
 sudo apt-get install u-boot-tools
@@ -60,6 +62,35 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 ```
 make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 ```
+
+### Copy Kernel
+
+**Enabling ssh services in armbian**
+
+go into linux folder
+
+```bash
+rm -rf build_kernel
+mkdir build_kernel
+sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=./build_kernel modules_install
+# scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
+scp ./arch/arm64/boot/Image mart@192.168.0.101:~
+tar -czvf ./build_kernel/lib.tar.gz ./build_kernel/lib
+# scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
+scp ./build_kernel/lib.tar.gz mart@192.168.0.101:~
+```
+
+ssh login your OPI
+
+```
+# ssh [username]@[OrangePi-5-Plus's Ip address]
+ssh mart@192.168.0.101
+sudo mv ./Image /boot
+tar -xvzf lib.tar.gz
+sudo cp -r ./build_kernel/lib/modules /lib
+```
+
+reboot
 
 ## Reference 
 
