@@ -49,6 +49,7 @@ sudo apt-get update && sudo apt update
 sudo apt-get upgrade && sudo apt upgrade
 sudo apt-get install -y armbian-config
 sudo armbian-config
+#>Personal>Locales>en.US_UTF8
 sudo nano /boot/armbianEnv.txt3
 #content is `extraargs=video=1920x1080@60`
 ```
