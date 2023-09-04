@@ -17,9 +17,28 @@
 - Orange PI 5 Plus
 - M.2 To PCIE x16 adapater
 - Graphic Card
-- SD Card with reader
+- SD Card(32GB+) with reader
 
 ## Software Preparation
+
+### Flash Armbian on SD Card
+
+1.download armbian img [here](https://www.armbian.com/orangepi-5/)
+
+I choosed [Orangepi5-plus_bookworm_legacy_5.10.160_minimal.img.xz](https://fi.mirror.armbian.de/dl/orangepi5-plus/archive/Armbian_23.8.1_Orangepi5-plus_bookworm_legacy_5.10.160_minimal.img.xz)
+
+2.get balenaEtcher
+
+[download link](https://github.com/balena-io/etcher/releases)
+
+3.flash the image
+Insert the SD card into the card reader and plug it into the USB port of your computer.
+
+>`Flash from file`>`Select Target`>`Flash`
+
+4.insert the sd card into OrangePi-5-Plus's SD Card Slot
+
+5.Boot into OS.
 
 ### Bootloader
 
