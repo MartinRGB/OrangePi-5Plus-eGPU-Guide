@@ -20,7 +20,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- orangepi_5_plus_defconfig
 make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu-
 ```
 
-### RKrdeveloptool
+## RKrdeveloptool
 
 ```
 sudo apt-get install libudev-dev libusb-1.0-0-dev dh-autoreconf
@@ -70,7 +70,7 @@ rkdeveloptool -v
 rkdeveloptool ver 1.32
 ```
 
-### Connect OrangePi 5 Plus to PC
+## Connect OrangePi 5 Plus to PC
 
 image & guide via [orangepiwiki](http://www.orangepi.org/orangepiwiki/index.php/Orange_Pi_5_Plus)
 
@@ -89,8 +89,22 @@ image & guide via [orangepiwiki](http://www.orangepi.org/orangepiwiki/index.php/
 4.run `rkdeveloptool ld` to find device
 
 
+## Build Kernel
+
 ```
-sudo apt-get install gcc-arm-linux-gnueabihf
+sudo apt-get install u-boot-tools
+git clone https://github.com/orangepi-xunlong/linux-orangepi.git
+cd inux-orangepi
+git switch orange-pi-5.10-rk3588
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu rockchip_linux_defconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
+```
+
+>`Device Drivers`>`PCI Support`>`PCI Express Port Bus support`
+>`Graphics Support`>`ATI Radeon` & `AMD GPU` (Enable SI & CIK Support)
+
+```
+make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 ```
 
 ## Reference 
