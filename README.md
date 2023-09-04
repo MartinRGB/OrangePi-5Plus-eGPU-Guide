@@ -40,6 +40,8 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 5.Boot into OS.
 
+<img src="https://raw.githubusercontent.com/MartinRGB/OrangePi-5Plus-eGPU-Guide/main/art/neofetch1.png" width="50%" height="50%">
+
 ### Bootloader
 
 Related reddit topic [Upstream U-Boot support for OrangePi 5/5B/5+](https://www.reddit.com/r/OrangePI/comments/157l7hv/upstream_uboot_support_for_orangepi_55b5/)
