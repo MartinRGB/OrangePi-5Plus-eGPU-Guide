@@ -1,6 +1,6 @@
 # OrangePi-5Plus-eGPU-Guide
 
-### Bootloader
+## Bootloader
 
 Related reddit topic [Upstream U-Boot support for OrangePi 5/5B/5+](https://www.reddit.com/r/OrangePI/comments/157l7hv/upstream_uboot_support_for_orangepi_55b5/)
 
