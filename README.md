@@ -17,6 +17,7 @@ sudo apt-get install gcc-aarch64-linux-gnu gh
 git clone https://github.com/orangepi-xunlong/u-boot-orangepi.git
 git switch v2017.09-rk3588
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- orangepi_5_plus_defconfig
+make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu-
 ```
 
 ### RKrdeveloptool
