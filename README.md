@@ -1,6 +1,27 @@
 # OrangePi-5Plus-eGPU-Guide
 
-## Bootloader
+## Hardware Preparation
+
+- Cables
+    - USB to TypeC calbe
+    - 5V 4A Power Supply
+    - HDMI cable(Monitor)
+
+- 500W+ ATX PSU
+    - 24 Pin ATX Connectors(with Jumper)
+    - PCI-E power cables x 2
+    - Floppy 4 pins to SATA x 1(for riser) 
+
+- Monitor
+- Linux PC
+- Orange PI 5 Plus
+- M.2 To PCIE x16 adapater
+- Graphic Card
+- SD Card with reader
+
+## Software Preparation
+
+### Bootloader
 
 Related reddit topic [Upstream U-Boot support for OrangePi 5/5B/5+](https://www.reddit.com/r/OrangePI/comments/157l7hv/upstream_uboot_support_for_orangepi_55b5/)
 
@@ -20,7 +41,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- orangepi_5_plus_defconfig
 make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu-
 ```
 
-## RKrdeveloptool
+### RKrdeveloptool
 
 ```
 sudo apt-get install libudev-dev libusb-1.0-0-dev dh-autoreconf
@@ -70,7 +91,7 @@ rkdeveloptool -v
 rkdeveloptool ver 1.32
 ```
 
-## Connect OrangePi 5 Plus to PC
+### Connect OrangePi 5 Plus to PC
 
 image & guide via [orangepiwiki](http://www.orangepi.org/orangepiwiki/index.php/Orange_Pi_5_Plus)
 
