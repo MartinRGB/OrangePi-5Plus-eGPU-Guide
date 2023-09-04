@@ -42,6 +42,16 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 <img src="https://raw.githubusercontent.com/MartinRGB/OrangePi-5Plus-eGPU-Guide/main/art/neofetch1.png" width="50%" height="50%">
 
+6.install necessary tools
+
+```
+sudo apt-get update && sudo apt update
+sudo apt-get upgrade && sudo apt upgrade
+sudo apt-get install -y armbian-config
+sudo armbian-config
+sudo nano /boot/armbianEnv.txt3
+#content is `extraargs=video=1920x1080@60`
+```
 ## Build & Copy Kernel
 
 ### Build Kernel
