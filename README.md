@@ -47,7 +47,7 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 ```
 sudo apt-get update && sudo apt update
 sudo apt-get upgrade && sudo apt upgrade
-sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev
+sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev
 sudo armbian-config
 #>Personal>Locales>en.US_UTF8
 sudo nano /boot/armbianEnv.txt3
