@@ -77,7 +77,7 @@ sudo apt-get install u-boot-tools
 git clone https://github.com/orangepi-xunlong/linux-orangepi.git
 cd linux-orangepi
 git switch orange-pi-5.10-rk3588
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu rockchip_linux_defconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- rockchip_linux_defconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 ```
 
