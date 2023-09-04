@@ -53,6 +53,21 @@ sudo armbian-config
 sudo nano /boot/armbianEnv.txt3
 #content is `extraargs=video=1920x1080@60`
 ```
+
+7.blacklist amdgpu or radeon
+
+```
+sudo nano /etc/modprobe.d/blacklist-radeon.conf
+
+# content is: 
+blacklist radeon
+
+sudo nano /etc/modprobe.d/blacklist-amdgpu.conf
+
+# content is: 
+blacklist amdgpu
+```
+
 ## Build & Copy Kernel
 
 ### Build Kernel
