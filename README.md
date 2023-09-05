@@ -105,7 +105,7 @@ make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 go into linux folder
 
 ```bash
-rm -rf ../build_kernel
+sudo rm -rf ../build_kernel
 mkdir ../build_kernel
 sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../build_kernel modules_install
 # scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
