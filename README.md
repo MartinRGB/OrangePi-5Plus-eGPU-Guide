@@ -127,8 +127,8 @@ ssh mart@192.168.0.101
 sudo mv ./Image /boot
 tar -xvzf lib.tar.gz
 rm -rf lib.tar.gz
-rm -rf ./build_kernel
 sudo cp -r ./build_kernel/lib/modules /lib
+rm -rf ./build_kernel
 
 # sudo mv ./Image /boot && tar -xvzf lib.tar.gz && rm -rf lib.tar.gz && sudo cp -r ./build_kernel/lib/modules /lib && sudo rm -rf ./build_kernel
 
