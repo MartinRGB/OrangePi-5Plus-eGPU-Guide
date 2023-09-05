@@ -46,12 +46,22 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 ```
 sudo apt-get update && sudo apt update
-sudo apt-get upgrade && sudo apt upgrade
+sudo apt-get -y upgrade && sudo apt -y upgrade
 sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev
 sudo systemctl set-default multi-user.target # Boot into CLI
-sudo armbian-config #>Personal>Locales>en.US_UTF8
 sudo nano /boot/armbianEnv.txt #content is `extraargs=video=1920x1080@60`
 
+```
+
+7.Enable 3D Acceleration (Ubuntu variant only):
+
+```
+sudo apt-get install python3-launchpadlib
+sudo add-apt-repository ppa:liujianfeng1994/panfork-mesa
+sudo add-apt-repository ppa:liujianfeng1994/rockchip-multimedia
+sudo apt update
+sudo apt dist-upgrade
+sudo apt install mali-g610-firmware rockchip-multimedia-config
 ```
 
 7.blacklist amdgpu or radeon
