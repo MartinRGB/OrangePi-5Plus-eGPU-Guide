@@ -105,6 +105,10 @@ tar -czvf ./lib.tar.gz ../build_kernel/lib
 sudo mv lib.tar.gz ..
 # scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
 scp ../lib.tar.gz mart@192.168.0.101:~
+
+# sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../build_kernel modules_install && tar -czvf ./lib.tar.gz ../build_kernel/lib && sudo mv lib.tar.gz .. && scp ./arch/arm64/boot/Image ../lib.tar.gz mart@192.168.0.101:~
+
+
 ```
 
 ssh login your OPI
@@ -115,7 +119,11 @@ ssh mart@192.168.0.101
 sudo mv ./Image /boot
 tar -xvzf lib.tar.gz
 rm -rf lib.tar.gz
+rm -rf ./build_kernel
 sudo cp -r ./build_kernel/lib/modules /lib
+
+# sudo mv ./Image /boot && tar -xvzf lib.tar.gz && rm -rf lib.tar.gz && rm -rf ./build_kernel && sudo cp -r ./build_kernel/lib/modules /lib
+
 ```
 
 reboot
