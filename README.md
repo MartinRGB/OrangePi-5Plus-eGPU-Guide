@@ -48,10 +48,10 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 sudo apt-get update && sudo apt update
 sudo apt-get upgrade && sudo apt upgrade
 sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev
-sudo armbian-config
-#>Personal>Locales>en.US_UTF8
-sudo nano /boot/armbianEnv.txt3
-#content is `extraargs=video=1920x1080@60`
+sudo systemctl set-default multi-user.target # Boot into CLI
+sudo armbian-config #>Personal>Locales>en.US_UTF8
+sudo nano /boot/armbianEnv.txt #content is `extraargs=video=1920x1080@60`
+
 ```
 
 7.blacklist amdgpu or radeon
