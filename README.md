@@ -63,7 +63,7 @@ sudo apt dist-upgrade
 sudo apt install mali-g610-firmware rockchip-multimedia-config
 ```
 
-7.blacklist amdgpu or radeon
+8.blacklist amdgpu or radeon
 
 ```bash
 sudo nano /etc/modprobe.d/blacklist-radeon.conf
