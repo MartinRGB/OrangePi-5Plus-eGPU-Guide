@@ -111,10 +111,13 @@ go into linux folder
 sudo rm -rf ../build_kernel
 mkdir ../build_kernel
 sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../build_kernel modules_install
-# scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
-scp ./arch/arm64/boot/Image mart@192.168.0.101:~
+
 tar -czvf ./lib.tar.gz ../build_kernel/lib
 sudo mv lib.tar.gz ..
+
+# scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
+scp ./arch/arm64/boot/Image mart@192.168.0.101:~
+
 # scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
 scp ../lib.tar.gz mart@192.168.0.101:~
 
