@@ -44,18 +44,17 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 6.install necessary tools
 
-```
+```bash
 sudo apt-get update && sudo apt update
 sudo apt-get -y upgrade && sudo apt -y upgrade
 sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev
 sudo systemctl set-default multi-user.target # Boot into CLI
 sudo nano /boot/armbianEnv.txt #content is `extraargs=video=1920x1080@60`
-
 ```
 
 7.Enable 3D Acceleration (Ubuntu variant only):
 
-```
+```bash
 sudo apt-get install python3-launchpadlib
 sudo add-apt-repository ppa:liujianfeng1994/panfork-mesa
 sudo add-apt-repository ppa:liujianfeng1994/rockchip-multimedia
@@ -66,7 +65,7 @@ sudo apt install mali-g610-firmware rockchip-multimedia-config
 
 7.blacklist amdgpu or radeon
 
-```
+```bash
 sudo nano /etc/modprobe.d/blacklist-radeon.conf
 
 # content is: 
@@ -82,7 +81,7 @@ blacklist amdgpu
 
 ### Build Kernel
 
-```
+```bash
 sudo apt-get install u-boot-tools
 git clone https://github.com/orangepi-xunlong/linux-orangepi.git
 cd linux-orangepi
@@ -118,12 +117,11 @@ scp ../lib.tar.gz mart@192.168.0.101:~
 
 # sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../build_kernel modules_install && tar -czvf ./lib.tar.gz ../build_kernel/lib && sudo mv lib.tar.gz .. && scp ./arch/arm64/boot/Image ../lib.tar.gz mart@192.168.0.101:~
 
-
 ```
 
 ssh login your OPI
 
-```
+```bash
 # ssh [username]@[OrangePi-5-Plus's Ip address]
 ssh mart@192.168.0.101
 sudo mv ./Image /boot
