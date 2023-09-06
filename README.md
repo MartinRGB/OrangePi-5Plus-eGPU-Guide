@@ -83,6 +83,16 @@ sudo nano /etc/modprobe.d/blacklist-amdgpu.conf
 blacklist amdgpu
 ```
 
+9.rebuild soft link
+ 
+```
+sudo rm -rf /vmlinuz /vmlinuz.old
+sudo ln -s /boot/Image /vmlinuz
+```
+
+
+shutdown & take the SD card out,insert SD card into reader,plug in PC
+
 ## Build & Copy Kernel
 
 ### Build Kernel
@@ -111,47 +121,18 @@ make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 
 ### Copy Kernel
 
-**Enabling ssh services in armbian**
-
 go into linux folder
 
 ```bash
-sudo rm -rf ../build_kernel
-mkdir ../build_kernel
-sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../build_kernel modules_install
+sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=/media/${USER}/armbi_root modules_install
 
-tar -czvf ./lib.tar.gz ../build_kernel/lib
-sudo mv lib.tar.gz ..
-
-# scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
-scp ./arch/arm64/boot/Image mart@192.168.0.101:~
-
-# scp ./arch/arm64/boot/Image [username]@[OrangePi-5-Plus's Ip address]:~
-scp ../lib.tar.gz mart@192.168.0.101:~
-
-# sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../build_kernel modules_install && tar -czvf ./lib.tar.gz ../build_kernel/lib && sudo mv lib.tar.gz .. && scp ./arch/arm64/boot/Image ../lib.tar.gz mart@192.168.0.101:~
+sudo cp ./arch/arm64/boot/Image /media/${USER}/armbi_boot/Image
+sudo cp ./arch/arm64/boot/dts/rockchip/*.dtb /media/${USER}/armbi_boot/dtb/rockchip
+sudo cp ./arch/arm64/boot/dts/rockchip/overlay/*.dtb* /media/${USER}/armbi_boot/dtb/rockchip/overlay
+sudo cp ./arch/arm64/boot/dts/rockchip/overlay/README.rockchip-overlays /media/${USER}/armbi_boot/dtb/rockchip/overlay
 
 ```
-
-ssh login your OPI
-
-```bash
-# ssh [username]@[OrangePi-5-Plus's Ip address]
-ssh mart@192.168.0.101
-sudo mv ./Image /boot
-tar -xvzf lib.tar.gz
-rm -rf lib.tar.gz
-sudo cp -r ./build_kernel/lib/modules /lib
-rm -rf ./build_kernel
-# rebuild soft link to /boot/Image
-sudo rm -rf /vmlinuz /vmlinuz.old
-sudo ln -s /boot/Image /vmlinuz
-
-# sudo mv ./Image /boot && tar -xvzf lib.tar.gz && rm -rf lib.tar.gz && sudo cp -r ./build_kernel/lib/modules /lib && sudo rm -rf ./build_kernel
-
-```
-
-reboot
+insert the SD Card into OPI,and power up
 
 ## Reference 
 
