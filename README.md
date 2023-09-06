@@ -109,8 +109,10 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 
 >`Graphics Support`>`ATI Radeon` & `AMD GPU` (Enable SI & CIK Support)
 
-I disabled Realtek Wifi driver & Rockchip Wireless Lan Support in `menuconfig`
+I disabled Realtek Wifi driver & Rockchip Wireless Lan Support in `menuconfig`( I use Intel's AX210)
 > `Device Drivers` > `Network device support` > `Wireless LAN` > `[] Realtek devices` | `[]Rockchip Wireless Lan Support`
+
+> `kernel hacking` > `Compile-time checks and compiler options`> `(4096) Warn for stack frames larger than ...`
 
 ```
 make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
