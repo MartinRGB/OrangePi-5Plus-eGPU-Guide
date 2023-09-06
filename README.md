@@ -128,6 +128,8 @@ sudo cp ./arch/arm64/boot/dts/rockchip/*.dtb /media/${USER}/armbi_boot/dtb/rockc
 sudo cp ./arch/arm64/boot/dts/rockchip/overlay/*.dtb* /media/${USER}/armbi_boot/dtb/rockchip/overlay
 sudo cp ./arch/arm64/boot/dts/rockchip/overlay/README.rockchip-overlays /media/${USER}/armbi_boot/dtb/rockchip/overlay
 
+# sudo cp ./arch/arm64/boot/Image /media/${USER}/armbi_boot/Image && sudo cp ./arch/arm64/boot/dts/rockchip/*.dtb /media/${USER}/armbi_boot/dtb/rockchip && sudo cp ./arch/arm64/boot/dts/rockchip/overlay/*.dtb* /media/${USER}/armbi_boot/dtb/rockchip/overlay && sudo cp ./arch/arm64/boot/dts/rockchip/overlay/README.rockchip-overlays /media/${USER}/armbi_boot/dtb/rockchip/overlay
+
 ```
 insert the SD Card into OPI,and power up
 
