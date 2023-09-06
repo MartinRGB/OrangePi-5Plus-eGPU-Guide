@@ -44,12 +44,18 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 6.install necessary tools
 
+on OPI
+
 ```bash
 sudo apt-get update && sudo apt update
 sudo apt-get -y upgrade && sudo apt -y upgrade
 sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev
-sudo systemctl set-default multi-user.target # Boot into CLI
-sudo nano /boot/armbianEnv.txt #content is `extraargs=video=1920x1080@60`
+# Boot into CLI
+sudo systemctl set-default multi-user.target 
+#extraargs=video=1920x1080@60
+sudo nano /boot/armbianEnv.txt
+
+# sudo apt-get update && sudo apt update && sudo apt-get -y upgrade && sudo apt -y upgrade && sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev && sudo systemctl set-default multi-user.target 
 ```
 
 7.Enable 3D Acceleration (Ubuntu variant only):
@@ -80,6 +86,8 @@ blacklist amdgpu
 ## Build & Copy Kernel
 
 ### Build Kernel
+
+on PC
 
 ```bash
 sudo apt-get install u-boot-tools
