@@ -21,7 +21,7 @@
 
 ## Software Preparation
 
-### Flash Armbian on SD Card
+### Flash Armbian to SD Card
 
 1.download armbian img [here](https://www.armbian.com/orangepi-5/)
 
@@ -31,7 +31,7 @@ I choosed [Orangepi5-plus_bookworm_legacy_5.10.160_minimal.img.xz](https://fi.mi
 
 [download link](https://github.com/balena-io/etcher/releases)
 
-3.flash the image
+3.insert the sd card into PC via reader & flash the image
 Insert the SD card into the card reader and plug it into the USB port of your computer.
 
 >`Flash from file`>`Select Target`>`Flash`
@@ -42,9 +42,7 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 
 <img src="https://raw.githubusercontent.com/MartinRGB/OrangePi-5Plus-eGPU-Guide/main/art/neofetch1.png" width="50%" height="50%">
 
-6.install necessary tools
-
-on OPI
+6.install necessary tools on OPI
 
 ```bash
 sudo apt-get update && sudo apt update
@@ -90,10 +88,9 @@ sudo rm -rf /vmlinuz /vmlinuz.old
 sudo ln -s /boot/Image /vmlinuz
 ```
 
+10.shutdown & take the SD card out,insert the sd card into PC via reader
 
-shutdown & take the SD card out,insert SD card into reader,plug in PC
-
-## Build & Copy Kernel
+## Kernel & Modules
 
 ### Build Kernel
 
@@ -119,7 +116,7 @@ I disabled Realtek Wifi driver & Rockchip Wireless Lan Support in `menuconfig`
 make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 ```
 
-### Copy Kernel
+### Copy builit Kernel & install modules
 
 go into linux folder
 
@@ -133,6 +130,12 @@ sudo cp ./arch/arm64/boot/dts/rockchip/overlay/README.rockchip-overlays /media/$
 
 ```
 insert the SD Card into OPI,and power up
+
+## Install X server
+
+```
+sudo apt-get install -y xorg lightdm lxde
+```
 
 ## Reference 
 
