@@ -134,7 +134,7 @@ insert the SD Card into OPI,and power up
 ## Install X server
 
 ```
-sudo apt-get install -y xorg lightdm lxde
+sudo apt-get install -y xorg lightdm xfce4-session xfce4-goodies
 ```
 
 ## Reference 
