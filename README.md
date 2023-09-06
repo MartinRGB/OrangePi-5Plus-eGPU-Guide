@@ -143,6 +143,9 @@ tar -xvzf lib.tar.gz
 rm -rf lib.tar.gz
 sudo cp -r ./build_kernel/lib/modules /lib
 rm -rf ./build_kernel
+# rebuild soft link to /boot/Image
+sudo rm -rf vmlinuz vmlinuz.old
+sudo ln -s /boot/Image vmlinuz
 
 # sudo mv ./Image /boot && tar -xvzf lib.tar.gz && rm -rf lib.tar.gz && sudo cp -r ./build_kernel/lib/modules /lib && sudo rm -rf ./build_kernel
 
