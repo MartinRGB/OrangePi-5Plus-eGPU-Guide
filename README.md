@@ -142,7 +142,7 @@ benchmark
 ```
 sudo apt-get install glmark-x11 mesa-utils
 vblank_mode=0 optirun glmark2
-``
+```
 
 ## Reference 
 
