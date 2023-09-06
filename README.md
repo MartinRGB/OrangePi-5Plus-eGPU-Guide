@@ -131,11 +131,18 @@ sudo cp ./arch/arm64/boot/dts/rockchip/overlay/README.rockchip-overlays /media/$
 ```
 insert the SD Card into OPI,and power up
 
-## Install X server
+## Tools & Patches
 
 ```
-sudo apt-get install -y xorg lightdm xfce4-session xfce4-goodies
+sudo apt-get install -y xorg lightdm lxde
 ```
+
+benchmark
+
+```
+sudo apt-get install glmark-x11 mesa-utils
+vblank_mode=0 optirun glmark2
+``
 
 ## Reference 
 
