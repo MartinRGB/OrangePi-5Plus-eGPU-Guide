@@ -84,7 +84,7 @@ blacklist amdgpu
 9.rebuild soft link
  
 ```
-sudo rm -rf /vmlinuz /vmlinuz.old
+sudo rm -rf /vmlinuz
 sudo ln -s /boot/Image /vmlinuz
 ```
 
