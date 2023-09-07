@@ -90,9 +90,9 @@ sudo ln -s /boot/Image /vmlinuz
 
 10.shutdown & take the SD card out,insert the sd card into PC via reader
 
-## Kernel & Modules
+## 5.10 Kernel & Modules
 
-### Build Kernel
+### Build Kernel 
 
 on PC
 
