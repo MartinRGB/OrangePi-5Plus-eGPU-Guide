@@ -47,7 +47,7 @@ Insert the SD card into the card reader and plug it into the USB port of your co
 ```bash
 sudo apt-get update && sudo apt update
 sudo apt-get -y upgrade && sudo apt -y upgrade
-sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev build-essential
+sudo apt-get install -y armbian-config firmware-amd-graphics pciutils git pkg-config libpng-dev libgl1-mesa-dev build-essential iptables
 # Boot into CLI
 sudo systemctl set-default multi-user.target 
 #extraargs=video=1920x1080@60
