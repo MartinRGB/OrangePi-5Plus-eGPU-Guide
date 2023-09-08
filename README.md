@@ -160,9 +160,27 @@ git checkout pistuff
 mkdir build
 cd build
 meson ..
-# Do not forget add 'r600' into 'gallium-drivers' option
+# Do not forget add 'r600,radeonsi' into 'gallium-drivers' option
 meson configure -Dgallium-drivers=v3d,vc4,freedreno,etnaviv,nouveau,tegra,virgl,lima,panfrost,swrast,r600,radeonsi
 sudo ninja install
+
+sudo cp /usr/local/lib/aarch64-linux-gnu/libXvMCr600.so.1.0 /usr/lib/aarch64-linux-gnu/libXvMCr600.so.1.0
+sudo cp /usr/local/lib/aarch64-linux-gnu/libXvMCr600.so.1.0.0 /usr/lib/aarch64-linux-gnu/libXvMCr600.so.1.0.0
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so.1.0.0 /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so.1.0.0
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so.1 /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so.1
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so.1.0 /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_r600.so.1.0
+sudo cp /usr/local/lib/aarch64-linux-gnu/libXvMCr600.so /usr/lib/aarch64-linux-gnu/libXvMCr600.so
+sudo cp /usr/local/lib/aarch64-linux-gnu/libXvMCr600.so.1 /usr/lib/aarch64-linux-gnu/libXvMCr600.so.1
+sudo cp /usr/local/lib/aarch64-linux-gnu/dri/r600_drv_video.so /usr/lib/aarch64-linux-gnu/dri/r600_drv_video.so
+sudo cp /usr/local/lib/aarch64-linux-gnu/dri/r600_dri.so /usr/lib/aarch64-linux-gnu/dri/r600_dri.so
+
+sudo cp /usr/local/lib/aarch64-linux-gnu/dri/radeonsi_drv_video.so /usr/lib/aarch64-linux-gnu/dri/radeonsi_drv_video.so
+sudo cp /usr/local/lib/aarch64-linux-gnu/dri/radeonsi_dri.so /usr/lib/aarch64-linux-gnu/dri/radeonsi_dri.so
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0.0 /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0.0
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1 /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1
+sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0 /usr/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0
 ```
 
 If use LLVM14,for `‘class llvm::AttributeList’ has no member named ‘hasAttribute’` issue,check [this](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/12715) request
