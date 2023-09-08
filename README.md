@@ -185,6 +185,10 @@ sudo cp /usr/local/lib/aarch64-linux-gnu/vdpau/libvdpau_radeonsi.so.1.0 /usr/lib
 
 If use LLVM14,for `‘class llvm::AttributeList’ has no member named ‘hasAttribute’` issue,check [this](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/12715) request
 
+>By the way, with LLVM 14 (59c954f76a66c6fc715610e85be71e9c050f2302), !12715 (merged) applied and the additional patch mentioned there by Kai, I still get the following output with Chrome when using --use-gl=desktop:
+>![image](https://github.com/MartinRGB/OrangePi-5Plus-eGPU-Guide/assets/7036706/b0ca8e59-710d-4aaf-9577-86e70023f7df)
+
+
 ## Reference 
 
 [Building mainline U-boot and Linux kernel for Orange Pi boards](https://uthings.uniud.it/building-mainline-u-boot-and-linux-kernel-for-orange-pi-boards)
