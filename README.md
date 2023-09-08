@@ -165,6 +165,8 @@ meson configure -Dgallium-drivers=v3d,vc4,freedreno,etnaviv,nouveau,tegra,virgl,
 sudo ninja install
 ```
 
+If use LLVM14,for `‘class llvm::AttributeList’ has no member named ‘hasAttribute’` issue,check [this](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/12715) request
+
 ## Reference 
 
 [Building mainline U-boot and Linux kernel for Orange Pi boards](https://uthings.uniud.it/building-mainline-u-boot-and-linux-kernel-for-orange-pi-boards)
