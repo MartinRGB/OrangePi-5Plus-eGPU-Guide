@@ -148,6 +148,23 @@ sudo apt-get install glmark-x11 mesa-utils
 vblank_mode=0 optirun glmark2
 ```
 
+## Mesa
+
+```
+sudo apt install clang lldb lld
+sudo apt-get install cmake libzstd-dev valgrind bison libunwind-dev libsensors-dev libarchive-dev libconfig-dev clang libvdpau-dev libxvmc-dev libxv-dev libomxil-bellagio-dev libva-dev libelf-dev
+sudo apt-get install meson llvm byacc libwayland-dev wayland-protocols libwayland-egl-backend-dev libxcb-glx0-dev libxcb-xrm-dev libxcb-composite0-dev libxcb-shm0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev python3-mako flex libc6-dev libdrm-dev libxext-dev libxfixes-dev libxxf86vm-dev libxrandr-dev 
+git clone https://github.com/Coreforge/mesa.git
+cd mesa
+git checkout pistuff
+mkdir build
+cd build
+meson ..
+# Do not forget add 'r600' into 'gallium-drivers' option
+meson configure -Dgallium-drivers=v3d,vc4,freedreno,etnaviv,nouveau,tegra,virgl,lima,panfrost,swrast,r600,radeonsi
+sudo ninja install
+```
+
 ## Reference 
 
 [Building mainline U-boot and Linux kernel for Orange Pi boards](https://uthings.uniud.it/building-mainline-u-boot-and-linux-kernel-for-orange-pi-boards)
