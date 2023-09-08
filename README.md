@@ -1,5 +1,8 @@
 # OrangePi-5Plus-eGPU-Guide
 
+
+**The project is suspended. as I sold my OPI5 and may be replacing it with a Rock's SBC**
+
 ## Hardware Preparation
 
 - Cables
@@ -188,7 +191,6 @@ If use LLVM14,for `‘class llvm::AttributeList’ has no member named ‘hasAtt
 >By the way, with LLVM 14 (59c954f76a66c6fc715610e85be71e9c050f2302), !12715 (merged) applied and the additional patch mentioned there by Kai, I still get the following output with Chrome when using --use-gl=desktop:
 >![image](https://github.com/MartinRGB/OrangePi-5Plus-eGPU-Guide/assets/7036706/b0ca8e59-710d-4aaf-9577-86e70023f7df)
 
-**The project is suspended. as I sold my OPI5 and may be replacing it with a Rock's SBC!**
 
 ## Reference 
 
